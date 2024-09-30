@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./src/output.css">
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn .5s ease-in-out;
+        }
+
+        /* Hide the logout button initially */
+        #logout {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-r from-orange-500 to-yellow-500 flex justify-center items-center h-screen m-0 font-sans">
+    <div class="bg-white p-8 rounded-lg shadow-lg animate-fadeIn max-w-sm w-full">
+        <h2 class="mb-4 text-2xl font-bold text-gray-800 text-center">Welcome Back!</h2>
+        <p class="mb-6 text-gray-600 text-center">Please login to your account</p>
+        <form id="loginForm">
+            <input type="email" id="login_email" placeholder="Email" required
+            class="w-full p-3 mb-4 border border-gray-300 rounded focus:border-orange-700 focus:outline-none">
+            <input type="password" id="login_password" placeholder="Password" required
+                class="w-full p-3 mb-4 border border-gray-300 rounded focus:border-orange-700 focus:outline-none">
+            <button type="submit" id="login"
+                class="w-full p-3 bg-orange-700 text-white rounded hover:bg-orange-600 transition duration-300">Login</button>
+        </form>
+        <div class="mt-6 text-center">
+            <a href="#" class="text-orange-700 hover:underline">Forgot Password?</a>
+        </div>
+        <div class="mt-4 text-center">
+            <span class="text-gray-600">Don't have an account?</span>
+            <a href="#" class="text-orange-700 hover:underline">Sign Up</a>
+        </div>
+    </div>
+
+    <!-- Logout button with SVG -->
+    <div id="logout" class="absolute top-4 right-4">
+        <button class="w-10 h-10 bg-red-600 rounded-full flex justify-center items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                <path
+                    d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z" />
+            </svg>
+        </button>
+    </div>
+
+    <script type="module">
+        // Import Firebase services
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
+    
+        // Your Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCmk9UfbIvxX68GbpK_wbTyxe_Bh9tl6c0",
+            authDomain: "handicraft-marketplace-63df1.firebaseapp.com",
+            projectId: "handicraft-marketplace-63df1",
+            storageBucket: "handicraft-marketplace-63df1.appspot.com",
+            messagingSenderId: "34989980332",
+            appId: "1:34989980332:web:de98a27de1c702dafd3d09",
+            measurementId: "G-2EC4QFTCM5"
+        };
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+    
+        // Initialize Firebase Auth
+        const auth = getAuth(app);
+    
+        // Handle login on form submission
+        document.getElementById("loginForm").addEventListener("submit", async function(event) {
+            event.preventDefault(); // Prevent default form submission
+    
+            const email = document.getElementById("login_email").value;
+            const password = document.getElementById("login_password").value;
+            const submitButton = document.querySelector('button[type="submit"]');
+    
+            // Input validation
+            if (!email || !password) {
+                alert("Please enter both email and password.");
+                return;
+            }
+    
+            submitButton.disabled = true; // Disable button to prevent multiple submissions
+    
+            try {
+                // Firebase sign-in method
+                const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+    
+                // Show success message
+                alert(`${user.email} logged in successfully!`);
+    
+                // Redirect to dashboard with user UID
+                window.location.href = `/dashboard.html?uid=${user.uid}`;
+    
+            } catch (error) {
+                let errorMessage = error.message;
+    
+                switch (error.code) {
+                    case 'auth/user-not-found':
+                        errorMessage = 'No user found with this email.';
+                        break;
+                    case 'auth/wrong-password':
+                        errorMessage = 'Incorrect password. Please try again.';
+                        break;
+                    case 'auth/invalid-email':
+                        errorMessage = 'Invalid email format.';
+                        break;
+                    default:
+                        errorMessage = 'Login failed. Please try again later.';
+                }
+    
+                console.error("Error during login:", errorMessage);
+                alert(errorMessage);
+    
+            } finally {
+                submitButton.disabled = false; // Re-enable button after login attempt
+            }
+        });
+    
+        // Handle logout
+        document.getElementById("logout").addEventListener("click", async function() {
+            try {
+                await signOut(auth);
+                console.log('Sign-out successful.');
+                alert('Sign-out successful.');
+    
+                // Redirect to login page after logout
+                window.location.href = '/login.html';
+    
+            } catch (error) {
+                console.error("Error during sign-out:", error);
+                alert('An error occurred during sign-out.');
+            }
+        });
+    
+        // Optional: Show/hide the logout button based on user's login status
+        document.addEventListener("DOMContentLoaded", () => {
+            onAuthStateChanged(auth, (user) => {
+                const logoutButton = document.getElementById('logout');
+                if (user) {
+                    // User is logged in, show the logout button
+                    logoutButton.style.display = 'block';
+                } else {
+                    // User is logged out, hide the logout button
+                    logoutButton.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    
+    
+</body>
+
+</html>
