@@ -33,7 +33,10 @@
 <body class="bg-gradient-to-r from-orange-500 to-yellow-500 flex justify-center items-center h-screen m-0 font-sans">
     <div class="absolute top-4 left-4">
         <a href="index.html" class="text-white bg-orange-700 hover:bg-orange-600 transition duration-300 p-2 rounded">
-            <svg class="inline mb-1" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/></svg>
+            <svg class="inline mb-1" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                width="24px" fill="#e8eaed">
+                <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" />
+            </svg>
             <p class="inline leading-none my-auto">Back to Home</p>
         </a>
     </div>
@@ -49,11 +52,11 @@
                 class="w-full p-3 bg-orange-700 text-white rounded hover:bg-orange-600 transition duration-300">Login</button>
         </form>
         <div class="mt-6 text-center">
-            <a href="#" class="text-orange-700 hover:underline">Forgot Password?</a>
+            <a id="forgotPasswordButton" class="text-orange-700 cursor-pointer hover:underline">Forgot Password?</a>
         </div>
         <div class="mt-4 text-center">
             <span class="text-gray-600">Don't have an account?</span>
-            <a href="#" class="text-orange-700 hover:underline">Sign Up</a>
+            <a href="./signup.html" class="text-orange-700 hover:underline">Sign Up</a>
         </div>
     </div>
 
@@ -61,8 +64,8 @@
     <script type="module">
         // Import Firebase services
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
-        import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
-
+        import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
+    
         // Your Firebase configuration
         const firebaseConfig = {
             apiKey: "AIzaSyCmk9UfbIvxX68GbpK_wbTyxe_Bh9tl6c0",
@@ -73,41 +76,39 @@
             appId: "1:34989980332:web:de98a27de1c702dafd3d09",
             measurementId: "G-2EC4QFTCM5"
         };
-
+    
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
-
-        // Initialize Firebase Auth
         const auth = getAuth(app);
-
+    
         // Handle login on form submission
         document.getElementById("loginForm").addEventListener("submit", async function (event) {
             event.preventDefault(); // Prevent default form submission
-
+    
             const email = document.getElementById("login_email").value;
             const password = document.getElementById("login_password").value;
             const submitButton = document.querySelector('button[type="submit"]');
-
+    
             // Input validation
             if (!email || !password) {
                 alert("Please enter both email and password.");
                 return;
             }
-
+    
             submitButton.disabled = true; // Disable button to prevent multiple submissions
-
+    
             try {
                 // Firebase sign-in method
                 const userCredential = await signInWithEmailAndPassword(auth, email, password);
                 const user = userCredential.user;
-
-
+    
                 // Redirect to dashboard with user UID
                 window.location.href = `/dashboard.html?uid=${user.uid}`;
-
+    
             } catch (error) {
                 let errorMessage = error.message;
-
+    
+                // Custom error messages based on error codes
                 switch (error.code) {
                     case 'auth/user-not-found':
                         errorMessage = 'No user found with this email.';
@@ -121,16 +122,36 @@
                     default:
                         errorMessage = 'Login failed. Please try again later.';
                 }
-
+    
                 console.error("Error during login:", errorMessage);
                 alert(errorMessage);
-
+    
             } finally {
                 submitButton.disabled = false; // Re-enable button after login attempt
             }
         });
-
+    
+        // Handle forgot password functionality
+        document.getElementById("forgotPasswordButton").addEventListener("click", function () {
+            const email = document.getElementById("login_email").value;
+    
+            if (email) {
+                // Send password reset email
+                sendPasswordResetEmail(auth, email)
+                    .then(() => {
+                        alert("Password reset email sent! Check your inbox.");
+                    })
+                    .catch((error) => {
+                        console.error("Error sending password reset email:", error.message);
+                        alert("Error: " + error.message);
+                    });
+            } else {
+                alert("Please enter your email address.");
+            }
+        });
+    
     </script>
+    
 
 </body>
 

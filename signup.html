@@ -68,9 +68,10 @@
     </div>
 
     <script type="module">
+        // Import Firebase services
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
         import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
-        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-database.js"; // Realtime Database
+        import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js"; // Firestore
     
         // Firebase configuration
         const firebaseConfig = {
@@ -80,14 +81,13 @@
             storageBucket: "handicraft-marketplace-63df1.appspot.com",
             messagingSenderId: "34989980332",
             appId: "1:34989980332:web:de98a27de1c702dafd3d09",
-            measurementId: "G-2EC4QFTCM5",
-            databaseURL: "https://handicraft-marketplace-63df1-default-rtdb.firebaseio.com/"
+            measurementId: "G-2EC4QFTCM5"
         };
     
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const auth = getAuth();
-        const database = getDatabase(app);
+        const firestore = getFirestore(app); // Firestore instance
     
         // Handle user registration
         document.getElementById("registrationForm").addEventListener("submit", async function(event) {
@@ -115,10 +115,10 @@
                 const userCredential = await createUserWithEmailAndPassword(auth, email, password);
                 const user = userCredential.user;
     
-                // Save user data in Realtime Database
+                // Save user data in Firestore
                 const userId = user.uid;
-                const userRef = ref(database, 'users/' + userId);
-                await set(userRef, {
+                const userDocRef = doc(firestore, 'users', userId);
+                await setDoc(userDocRef, {
                     fullName: fullName || '-not added-',
                     emailId: email || '-not added-',
                     mobileNo: '-not added-',   // Default values
@@ -128,13 +128,14 @@
                     dateOfBirth: '-not added-',
                     gender: '-not added-'
                 });
-        
-                // Redirect to dashboard and pass user UID
+    
+                // Redirect to dashboard with user UID
                 window.location.href = `dashboard.html?uid=${userId}`;
     
             } catch (error) {
                 let errorMessage = error.message;
     
+                // Custom error messages based on error codes
                 switch (error.code) {
                     case 'auth/email-already-in-use':
                         errorMessage = 'This email is already in use. Please use a different email.';
@@ -156,10 +157,6 @@
             }
         });
     </script>
-    
-
-    
-    
     
 </body>
 

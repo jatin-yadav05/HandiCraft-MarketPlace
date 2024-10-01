@@ -61,7 +61,7 @@ app.post('/subscribe', (req, res) => {
                 <ol>
                     <li><a href="http://localhost:5173/shop" style="color: #ff6600;">Browse our latest collections</a></li>
                     <li><a href="http://localhost:5173/blog" style="color: #ff6600;">Read our blog for crafting inspiration</a></li>
-                    <li><a href="http://localhost:5173/profile" style="color: #ff6600;">Update your profile and preferences</a></li>
+                    <li><a href="http://localhost:5173/dashboard" style="color: #ff6600;">Update your profile and preferences</a></li>
                 </ol>
                 <p>Feel free to <a href="http://localhost:5173/contact" style="color: #ff6600;">contact us</a> if you have any questions or need assistance.</p>
                 <p>Best regards,</p>
