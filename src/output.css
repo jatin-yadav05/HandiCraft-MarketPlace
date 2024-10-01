@@ -1714,7 +1714,35 @@ video {
   }
 }
 
+@media not all and (min-width: 1024px) {
+  .max-lg\:mr-\[3vw\] {
+    margin-right: 3vw;
+  }
+}
+
+@media (max-width: 900px) {
+  .max-\[900px\]\:mr-\[\] {
+    margin-right: ;
+  }
+
+  .max-\[900px\]\:mr-\[1vw\] {
+    margin-right: 1vw;
+  }
+
+  .max-\[900px\]\:gap-\[\] {
+    gap: ;
+  }
+
+  .max-\[900px\]\:gap-\[2vw\] {
+    gap: 2vw;
+  }
+}
+
 @media not all and (min-width: 768px) {
+  .max-md\:mr-\[3vw\] {
+    margin-right: 3vw;
+  }
+
   .max-md\:hidden {
     display: none;
   }
