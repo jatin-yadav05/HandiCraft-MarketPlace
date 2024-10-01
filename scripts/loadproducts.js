@@ -11,10 +11,10 @@ function loadProducts(products) {
 
         productCard.innerHTML = `
         <div class="relative w-full aspect-square bg-pink-200 rounded-lg flex items-center justify-center mb-4">
-            <img src="${product.image || '/images/default-product.jpg'}" alt="${product.name}" class="max-w-full max-h-full object-contain rounded-lg">
+            <img src="${product.image || './images/default-product.jpg'}" alt="${product.name}" class="max-w-full max-h-full object-contain rounded-lg">
         </div>
         <div style="top:1.5rem;right:1.5rem;" class="absolute">
-            <img src="/images/heart.svg" alt="Favorite" class="w-7 h-7 aspect-square cursor-pointer">
+            <img src="./images/heart.svg" alt="Favorite" class="w-7 h-7 aspect-square cursor-pointer">
         </div>
         <hr class="border-t-2 w-[70%] border-[#ac5b1c] mb-4 mt-4 opacity-50">
         <h3 class="text-lg font-semibold mb-2">${product.name}</h3>
