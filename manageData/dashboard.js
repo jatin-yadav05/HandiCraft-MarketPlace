@@ -72,7 +72,7 @@ onAuthStateChanged(auth, (user) => {
 document.getElementById("logout").addEventListener("click", async function () {
     await signOut(auth);
     console.log('Sign-out successful.');
-    window.location.href = '/login.html'; // Redirect to login page after logout
+    window.location.href = './login.html'; // Redirect to login page after logout
 });
 
 // Edit Profile
