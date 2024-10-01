@@ -50,13 +50,14 @@ function loadUserProfile(userId) {
     });
 }
 
+document.getElementById('logout').style.display = 'block';
+document.getElementById('login-nav').style.display = 'none';
+document.getElementById('signup-nav').style.display = 'none';
+
 onAuthStateChanged(auth, (user) => {
     if (user) {
         const userId = user.uid;
         loadUserProfile(userId);
-        document.getElementById('logout').style.display = 'block';
-        document.getElementById('login-nav').style.display = 'none';
-        document.getElementById('signup-nav').style.display = 'none';
     } else {
         window.location.href = 'login.html';
         document.getElementById('logout').style.display = 'none';
@@ -71,12 +72,10 @@ document.getElementById("logout").addEventListener("click", function () {
     signOut(auth)
         .then(() => {
             console.log('Sign-out successful.');
-            alert('You have successfully logged out.');
             window.location.href = '/login.html'; // Redirect to login page after logout
         })
         .catch((error) => {
             console.error("Error during sign-out:", error);
-            alert('Error logging out.');
         });
 });
 

@@ -6,10 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link rel="stylesheet" href="./src/output.css">
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn .5s ease-in-out;
+        }
+    </style>
 </head>
 
 <body class="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 min-h-screen flex items-center justify-center">
-    <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+    <div class="absolute top-4 left-4">
+        <a href="index.html" class="text-white hover:bg-purple-500 bg-purple-600 transition duration-300 p-2 rounded">
+            <svg class="inline mb-1" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/></svg>
+            <p class="inline leading-none my-auto">Back to Home</p>
+        </a>
+    </div>
+    <div class="bg-white p-8 rounded-lg shadow-lg animate-fadeIn max-w-md w-full">
         <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Create an Account</h2>
         <form id="registrationForm" action="#" method="POST">
             <div class="mb-4">
@@ -105,9 +128,7 @@
                     dateOfBirth: '-not added-',
                     gender: '-not added-'
                 });
-    
-                alert("Registration successful!!");
-    
+        
                 // Redirect to dashboard and pass user UID
                 window.location.href = `dashboard.html?uid=${userId}`;
     

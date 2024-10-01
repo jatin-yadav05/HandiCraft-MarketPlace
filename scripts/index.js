@@ -3,6 +3,10 @@ const slides = document.getElementById('slides');
 const dots = document.querySelectorAll('.dot');
 let currentIndex = 0;
 
+document.getElementById('login-nav').style.display = 'none';
+document.getElementById('signup-nav').style.display = 'none';
+document.getElementById('extra-link').style.display = 'inline';
+
 function showSlide(index) {
   currentIndex = index;
   const offset = -index * 100;
@@ -41,7 +45,7 @@ showSlide(0);
 
 
 
-window.addEventListener('scroll', ()=> {
+window.addEventListener('scroll', () => {
   const topBar = document.querySelector('.top-bar');
   const navBar = document.querySelector('.nav-bar');
   if (window.scrollY > 50) {
