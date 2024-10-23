@@ -1,4 +1,3 @@
-// Import Firebase services
 import { initializeApp } from "firebase/app";
 import { getFirestore, doc, getDoc, updateDoc } from "firebase/firestore"; // Firestore methods
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
@@ -55,17 +54,21 @@ async function loadUserProfile(userId) {
 // Auth state change listener
 onAuthStateChanged(auth, (user) => {
     if (user) {
-        const userId = user.uid; // Get user ID
-        loadUserProfile(userId); // Load user profile
-        document.getElementById('logout').style.display = 'block';
+        // User is logged in, show logout button and hide login/signup
+        const userId = user.uid; // Get the currently signed-in user ID
+        loadUserProfile(userId); // Load user profile from Firestore
+        document.getElementById('imported-link').style.display = 'inline';
         document.getElementById('login-nav').style.display = 'none';
-        document.getElementById('signup-nav').style.display = 'none';
-    } else {
-        window.location.href = 'login.html'; // Redirect if not logged in
-        document.getElementById('logout').style.display = 'none';
-        document.getElementById('login-nav').style.display = 'block';
-        document.getElementById('signup-nav').style.display = 'block';
-    }
+          document.getElementById('signup-nav').style.display = 'none';
+          document.getElementById('extra-link').style.display = 'inline';
+      } else {
+          // No user is logged in, show login/signup and hide logout
+          window.location.href = 'login.html'; // Redirect to login page if not logged in
+          document.getElementById('imported-link').style.display = 'inline';
+          document.getElementById('login-nav').style.display = 'inline';
+          document.getElementById('signup-nav').style.display = 'inline';
+          document.getElementById('extra-link').style.display = 'none';
+      }
 });
 
 // Logout functionality

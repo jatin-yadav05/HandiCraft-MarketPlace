@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Search Bar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #search-input.scale-100 {
+            transform: scale(1);
+            opacity: 1;
+        }
+        .transition-transform {
+            transition: transform 0.4s ease, opacity 0.4s ease;
+        }
+    </style>
+</head>
+<body class="relative bg-gray-100">
+    <h1></h1>
+
+    <!-- Search button (trigger) -->
+    <div class="fixed top-5 right-5">
+        <button id="open-search" class="bg-blue-500 text-white p-3 rounded-full shadow-md hover:bg-blue-600 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Full-screen overlay with blurred background -->
+    <div id="search-overlay" class="hidden fixed inset-0 bg-transparent backdrop-blur-sm z-40 flex items-center justify-center">
+        <div class="relative w-full max-w-lg">
+            <input id="search-input" type="text" placeholder="Search..." class="w-full p-4 text-lg border-2 border-gray-300 rounded-full focus:outline-none transition-transform transform scale-95 opacity-0" />
+            <button id="close-search" class="absolute top-0 right-0 mt-3 mr-4 text-gray-400 text-2xl">&times;</button>
+        </div>
+    </div>
+
+    <script>
+        const openSearchButton = document.getElementById('open-search');
+        const searchOverlay = document.getElementById('search-overlay');
+        const searchInput = document.getElementById('search-input');
+        const closeSearchButton = document.getElementById('close-search');
+
+        // Open search overlay
+        openSearchButton.addEventListener('click', () => {
+            searchOverlay.classList.remove('hidden');
+            setTimeout(() => {
+                searchInput.classList.remove('scale-95', 'opacity-0');
+                searchInput.classList.add('scale-100', 'opacity-100');
+            }, 10); // slight delay for smooth transition
+        });
+
+        // Close search overlay
+        closeSearchButton.addEventListener('click', () => {
+            searchInput.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                searchOverlay.classList.add('hidden');
+            }, 100); // match this to transition duration
+        });
+
+        // Close overlay by clicking outside the search input
+        searchOverlay.addEventListener('click', (e) => {
+            if (e.target === searchOverlay) {
+                closeSearchButton.click();
+            }
+        });
+    </script>
+
+</body>
+</html>

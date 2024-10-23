@@ -1,0 +1,1305 @@
+.payment_paymentBox__TubcX ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+.payment_paymentBox__TubcX ul li {
+  /* display: flex; */
+  padding: 18px;
+  box-shadow: 0px 3px 6px #6f57e914;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 18px;
+  box-sizing: border-box;
+}
+.payment_paymentBox__TubcX ul li * {
+  cursor: pointer;
+}
+
+.payment_paymentBox__TubcX ul li:hover {
+  background-color: var(--color-bg-secondary);
+}
+.payment_hideLineItems__McKAd {
+  display: none !important;
+}
+.payment_bb1__03K-y {
+  border-bottom: 1px solid var(--grey-lite);
+}
+.payment_section__roX6k:nth-child(4) {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+/* .bgUpi {
+  padding: 10px 40px 20px 5px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 5px;
+  font-size: 10px;
+  background-image: url("/public/assets/images/payment/bg_upi.svg");
+} */
+.payment_upiContainer__W\+skk img {
+}
+
+.payment_u__MsPnZ
+.payment_qrCode__0DkrM {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  padding: 16px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+
+}
+
+.payment_upiContainer__W\+skk .payment_item__efB4s {
+  height: 55px;
+  width: 55px;
+  border: 1px solid #efefef;
+  box-shadow: 0px 3px 6px #E0E0E04D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.payment_itemCard__blm78{
+  height: 55px;
+  width: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 10.046px;
+  border: 0.231px solid #D0DBF7;
+  background: #FFF;
+  box-shadow: 4.01849px 4.01849px 11.05085px 0px rgba(208, 219, 247, 0.15), -2.00924px -2.00924px 10.04622px 0px rgba(208, 219, 247, 0.15);
+}
+.payment_upiContainer__W\+skk .payment_item__efB4s:hover {
+
+}
+.payment_upiContainer__W\+skk .payment_item__efB4s:first-child {
+}
+.payment_OR__BrK5V {
+  position: relative;
+  text-align: center;
+  color: var(--grey-medium);
+  font-size: 14px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+  font-weight: 500;
+}
+.payment_OR__BrK5V::before,
+.payment_OR__BrK5V::after {
+  content: "";
+  height: 1px;
+  width: 46%;
+  position: absolute;
+  background-color: var(--grey-lite);
+  top: calc(100% - 8px);
+}
+.payment_OR__BrK5V::before {
+  left: 0;
+}
+.payment_OR__BrK5V::after {
+  right: 0;
+}
+.payment_greyScale__0gQMm {
+  filter: grayscale(1);
+}
+.payment_h12__Ur\+Sh {
+  height: 12px !important;
+}
+
+/* .upArrow {
+  height: auto;
+  width: 12px;
+  display: flex;
+  align-items: center;
+  margin-top: 2px;
+  margin-left: 4px;
+  margin-right: 2px;
+} */
+
+/* .downArrow {
+  height: auto;
+  width: 17px;
+  display: flex;
+  align-items: center;
+  margin-top: 2px;
+  margin-left: 2px;
+} */
+
+/* .upArrow img,
+.downArrow img {
+  height: 100%;
+  width: 100%;
+} */
+
+.payment_prepaidDiscount__p9JGN {
+  display: inline-block;
+  background-color: #e9b35747;
+  color: #ff851b;
+  padding: 2px 7px 2px 7px;
+  border-radius: 10px;
+  position: relative;
+  font-size: 10px;
+  display: inline-flex;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+.payment_prepaidDiscount__p9JGN > img {
+  padding-right: 1px;
+}
+.payment_fireLogo__6ETaC {
+  padding-bottom: 4px;
+  padding-top: 2px;
+}
+
+.payment_emailButton__2JsEL {
+    width: 45%;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: 0;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in;
+    height: 48px;
+}
+
+.payment_emailButton__2JsEL:disabled {
+  width: 30%;
+  opacity: 0.5;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: 0;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.5s ease-in;
+}
+
+.payment_emailButtonCard__\+BoRp {
+  width: 45%;
+  color: var(--white);
+  border: 0;
+  cursor: pointer;
+  transition: background-color 0.5s ease-in;
+  border-radius: 6px;
+  background: #3173E3;
+  background: var(--Primary-shade, #3173E3);
+  box-shadow: 0px 0px 4px 0px rgba(14, 53, 191, 0.25);
+}
+
+.payment_emailButtonCard__\+BoRp:disabled {
+width: 45%;
+opacity: 0.5;
+background-color: #F2F2F2;
+background-color: var(--Disable-Button, #F2F2F2);
+color:rgba(172, 172, 172, 0.67);
+color:var(--Disable-Text, rgba(172, 172, 172, 0.67));
+border: 0;
+border-top-right-radius: 6px;
+border-bottom-right-radius: 6px;
+cursor: not-allowed;
+transition: background-color 0.5s ease-in;
+}
+ 
+.payment_shipping__container__zEkCx{
+  display: flex;
+  gap: 8px;
+  overflow-x: scroll;
+  margin-bottom: 14px;
+}
+
+.payment_shipping__container__zEkCx::-webkit-scrollbar {
+  display: none;
+}
+
+.payment_shipping__container__zEkCx {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;
+}
+
+.payment_shipping__container__card__NY4tg{
+  display: flex;
+  overflow-x: scroll;
+  margin-bottom: 14px;
+}
+.payment_content__-xwAY{
+  margin-left: 2%;
+  color:rgb(149, 145, 145);
+  font-size: smaller;
+
+}
+.payment_dothr__8fGhD{
+  color:rgb(149, 145, 145);
+  border:none;
+  border-top:2px dotted;
+  /* margin:10px 0px; */
+  margin-top: 10px;
+  margin-bottom: 10px !important;
+}
+.payment_shipping__container__card__NY4tg::-webkit-scrollbar {
+  display: none;
+}
+
+.payment_shipping__container__card__NY4tg {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;
+}
+
+.payment_amount_to_be_paid_button__FVXGO{
+  padding: 16px 10px;
+  border-radius: 4px;
+  border: 0.75px solid rgba(111, 87, 233, 0.30);
+  background-color: #FFF;
+  cursor: pointer;
+  height: 68px;
+  box-sizing: border-box;
+  margin-top: 12px;
+  
+}
+
+.payment_amount_to_be_paid_button__FVXGO:hover{
+  background: #EEEEFD;
+}
+.payment_amount_to_be_paid_button_card__8N5cK {
+  border-radius: 4px;
+  border: none;
+  background-color: #FFF;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 16px 8px;
+}
+.payment_amount_to_be_paid_button_card__8N5cK:active {
+  background: rgba(234, 234, 234, 0.40);
+}
+.payment_amount_to_be_paid__b\+jQD{
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.payment_amount_to_be__offer_badge__2W7qb{  
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-top: 4px;
+  font-weight: 500;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  float: right;
+}
+.payment_amount_to_be__offer_badge_card__Qjx5W{  
+  display: flex;
+  width: -webkit-max-content;
+  width: max-content;
+  height: 19px;
+  padding: 4px 12px;
+  align-items: center;
+  gap: 5px;
+  margin: 0px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.payment_prepaid_badge_color__OvFWt{
+  background: #C5F5CC;
+  color: #29951B;
+}
+
+.payment_cod_badge_color__uTcii{
+  background: #FFE4CC;
+  color: #F3831B;
+}
+.payment_prepaid_badge_color_card__qRoRF{
+  border: 0.2px solid #238017;
+  background: linear-gradient(92deg, rgba(227, 250, 240, 0.25) -25.78%, rgba(194, 244, 199, 0.25) 104.79%, rgba(227, 250, 240, 0.25) 119.91%, rgba(227, 250, 240, 0.00) 132.16%, rgba(187, 255, 206, 0.25) 132.16%);
+  color: #248018;
+}
+
+.payment_cod_badge_color_card__IlbDK{
+  background: linear-gradient(96deg, #FFF8EF 1.5%, #FFD1C3 97.15%);
+  color: #E95123;;
+}
+
+.payment_totalAmount__0o2N\+ {
+  color: #000;
+  color: var(--Heading, #000);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'Metropolis';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px; /* 233.333% */
+  letter-spacing: 0.3px;
+}
+.payment_totalAmountCard__dTUTm{
+  color: #000;
+  color: var(--Heading, #000);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'Metropolis';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px; /* 233.333% */
+  letter-spacing: 0.3px;
+  margin-right: 5px;
+}
+.payment_prepaidBanner__LaQ-m {
+  display: flex;
+  min-height: 19px;
+  padding: 2px 8px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-items: center;
+  gap: 5px;
+  margin:0px 6px 6px 31px;
+  border-radius: 2px;
+  -webkit-backdrop-filter: blur(21px);
+          backdrop-filter: blur(21px);
+  font-size: 12px;
+  font-weight: 500;
+  border: 0.5px solid #99DC90;
+  border: 0.5px solid var(--Linear-discount, #99DC90);;
+  background: linear-gradient(92deg, rgba(227, 250, 240, 0.25) -25.78%, rgba(194, 244, 199, 0.25) 104.79%, rgba(227, 250, 240, 0.25) 119.91%, rgba(227, 250, 240, 0.00) 132.16%, rgba(187, 255, 206, 0.25) 132.16%);
+  color: #248018;
+  text-align : left;
+}
+.payment_codBanner__XMUNW{
+  color: #827979;
+  color: var(--Old-Amount, #827979);
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 4px;
+  text-align : left;
+}
+.payment_newPaymentLogoContainer__mgd1l{
+  border-radius: 4px;
+  border: 0.75px solid #B1B1B1;
+  border: 0.75px solid var(--icon, #B1B1B1);
+  background: #F9FAFD;
+  background: var(--Background-colour, #F9FAFD);
+  box-shadow: 4px 4px 11px 0px rgba(208, 219, 247, 0.25), -2px -2px 10px 0px rgba(208, 219, 247, 0.25);
+}
+
+.payment_timerImg__pFMk0 {
+  vertical-align: middle;
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-bottom: 2px;
+}
+.payment_timerImgCard__-zc\+T{
+  vertical-align: middle;
+  margin-left: 3px;
+  margin-right: 2px;
+}
+.payment_timer__xh6lT {
+  display: inline-block;
+  min-width: 18px;
+  margin-right: 2px;
+}
+.payment_timerCard__myDwy {
+  color: #3173E3;
+  font-family: 'Metropolis';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.payment_static__edd__wrapper__CSihW{
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+.payment_static__edd__heading__65lCk{
+  font-size:16px;
+  font-weight: 600;
+  color: #111111;
+}
+
+.payment_static__left__side__Q-\+S-{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.payment_static__left__edd__v88vh{
+  font-size:14px;
+  font-weight: 500;
+  color: #111111;
+
+}
+
+.payment_static__left__delivery__RNo6u{
+  font-size:12px;
+  color: #248018
+}
+.payment_gst__button__wlQSC{
+  background-color: #fff !important;
+  color: var(--secondary-color)  !important;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.payment_gst__button__card__chV1I{
+  background-color: #fff !important;
+  color: #3173E3 !important;
+  color: var(--Primary-shade, #3173E3) !important;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.payment_gst__number__m8RZe{
+  display: flex;
+  width: calc(100% - 12px);
+  justify-content: space-between;
+  border: 1px solid #F2F2F2;
+  border-radius: 4px;
+  margin: 6px 0;
+  padding: 4px 6px 0px;
+  font-size: 14px;
+  color: #222222;
+}
+
+.payment_gst__input__number__SPBgt input{
+    margin-top: 8px;
+    margin-bottom: 16px;
+    width: 97%;
+    padding: 12px 10px;
+    border-radius: 8px;
+    border: 1px solid #3173E333;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.payment_gst__input__number__SPBgt input::placeholder{
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.payment_tags_pill__8Al8N{
+  margin-left: 6px;
+  border-radius: 50px;
+  padding: 2px 8px 1px;
+  font-size:10px;
+  background:#3173E333;
+  color:#222222;
+  text-transform: capitalize; 
+  border: 1px solid #3173E333;
+  line-height: 10px;
+}
+
+.payment_cod_badge_only_discount__lZCXk {
+  font-size: 10px;
+  padding: 0px 6px;
+  border-radius: 4px;
+  margin-top: 4px;
+  font-weight: 500;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.payment_cod_bedge_remove_coupon__jh1-D > div{
+  margin-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.payment_cod_bedge_remove_coupon__jh1-D > div > button{
+  margin-bottom: 0 !important;
+  margin-right: 0 !important;
+  z-index: 99;
+}
+
+
+.payment_z_index_payment_button__8vhDu > div > button{
+  z-index: 99;
+}
+
+.payment_cod_remove_button_container__Tv7t5 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -32px;
+    padding: 0 10px;
+}
+
+.payment_cod_charges_remove_button__IhPlB{
+  margin-top: 0;
+}
+
+@media only screen and (max-width: 417px) {
+  .payment_cod_charges_remove_button__IhPlB{
+    margin-top: 16px;
+  }
+}
+
+.paymentOld_paymentBox__d4vf9 ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  .paymentOld_paymentBox__d4vf9 ul li {
+    /* display: flex; */
+    padding: 18px;
+    box-shadow: 0px 3px 6px #6f57e914;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 18px;
+    box-sizing: border-box;
+  }
+  .paymentOld_paymentBox__d4vf9 ul li * {
+    cursor: pointer;
+  }
+  
+  .paymentOld_paymentBox__d4vf9 ul li:hover {
+    background-color: var(--color-bg-secondary);
+  }
+  .paymentOld_hideLineItems__ch1aK {
+    display: none !important;
+  }
+  .paymentOld_bb1__tTbzP {
+    border-bottom: 1px solid var(--grey-lite);
+  }
+  .paymentOld_section__29GIU:nth-child(4) {
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  /* .bgUpi {
+    padding: 10px 40px 20px 5px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 5px;
+    font-size: 10px;
+    background-image: url("/public/assets/images/payment/bg_upi.svg");
+  } */
+  .paymentOld_upiContainer__5J8A4 img {
+    height: 16px;
+  }
+  .paymentOld_qrCode__tUOf- {
+    border: 1px solid var(--grey-lite);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    padding: 16px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+  .paymentOld_upiContainer__5J8A4 .paymentOld_item__5Kayw {
+    padding: 15px;
+    width: 40%;
+    border: 1px solid #efefef;
+    box-shadow: 0px 3px 6px #E0E0E04D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .paymentOld_upiContainer__5J8A4 .paymentOld_item__5Kayw:hover {
+    border: 1px solid var(--ascent-bg-lite);
+    background-color: var(--ascent-bg-lite);
+  }
+  .paymentOld_upiContainer__5J8A4 .paymentOld_item__5Kayw:first-child {
+    margin-right: 10px;
+  }
+  .paymentOld_OR__wd9Pr {
+    position: relative;
+    text-align: center;
+    color: var(--grey-medium);
+    font-size: 14px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    font-weight: 500;
+  }
+  .paymentOld_OR__wd9Pr::before,
+  .paymentOld_OR__wd9Pr::after {
+    content: "";
+    height: 1px;
+    width: 46%;
+    position: absolute;
+    background-color: var(--grey-lite);
+    top: calc(100% - 8px);
+  }
+  .paymentOld_OR__wd9Pr::before {
+    left: 0;
+  }
+  .paymentOld_OR__wd9Pr::after {
+    right: 0;
+  }
+  .paymentOld_greyScale__a0efu {
+    filter: grayscale(1);
+  }
+  .paymentOld_h12__Wg0\+l {
+    height: 12px !important;
+  }
+  
+  /* .upArrow {
+    height: auto;
+    width: 12px;
+    display: flex;
+    align-items: center;
+    margin-top: 2px;
+    margin-left: 4px;
+    margin-right: 2px;
+  } */
+  
+  /* .downArrow {
+    height: auto;
+    width: 17px;
+    display: flex;
+    align-items: center;
+    margin-top: 2px;
+    margin-left: 2px;
+  } */
+  
+  /* .upArrow img,
+  .downArrow img {
+    height: 100%;
+    width: 100%;
+  } */
+  
+  .paymentOld_prepaidDiscount__eGNLq {
+    display: inline-block;
+    background-color: #e9b35747;
+    color: #ff851b;
+    padding: 2px 7px 2px 7px;
+    border-radius: 10px;
+    position: relative;
+    font-size: 10px;
+    display: inline-flex;
+    margin-bottom: 10px;
+    justify-content: center;
+  }
+  .paymentOld_prepaidDiscount__eGNLq > img {
+    padding-right: 1px;
+  }
+  .paymentOld_fireLogo__RSxAn {
+    padding-bottom: 4px;
+    padding-top: 2px;
+  }
+  
+  .paymentOld_emailButton__jg8vm {
+      width: 45%;
+      background-color: var(--primary-color);
+      color: var(--white);
+      border: 0;
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.5s ease-in;
+  }
+  
+  .paymentOld_emailButton__jg8vm:disabled {
+    width: 30%;
+    opacity: 0.5;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: 0;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in;
+  }
+   
+  
+
+.qrCodeLoader_backdrop__wyu\+K {
+  border: 2px solid var(--grey-lite-bg);
+  border-top: 2px solid var(--secondary-color);
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  margin: 0 auto;
+  animation: qrCodeLoader_spin__F8\+v1 2s linear infinite;
+  margin-left: 6px;
+    }
+    
+  @keyframes qrCodeLoader_spin__F8\+v1 {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+.Razorpay_netBanking__KL5Ep{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 26px;
+}
+.Razorpay_bankName__4r0MW{
+    /* flex-grow: 1; */
+    /* margin-right: 15px; */
+    text-align: center;
+    /* max-width: 75px; */
+}
+.Razorpay_bankName__4r0MW:last-child{
+    margin-right: 0px;
+}
+.Razorpay_imgThumbnail__DF2n-{
+    border: 1px solid var(--grey-lite);
+    padding: 10px 0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    height: 48px;
+    width: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Razorpay_imgThumbnail__DF2n-.Razorpay_selected__Qapv6{
+    border: 2px solid var(--secondary-color);
+}
+.Razorpay_imgThumbnailCard__oFn7J{
+    height: 55px;
+    width: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 10.046px;
+    border: 0.231px solid #D0DBF7;
+    background: #FFF;
+    box-shadow: 4.01849px 4.01849px 11.05085px 0px rgba(208, 219, 247, 0.15), -2.00924px -2.00924px 10.04622px 0px rgba(208, 219, 247, 0.15);
+}
+.Razorpay_imgThumbnailCard__oFn7J.Razorpay_selected__Qapv6{
+    border: 2px solid var(--secondary-color);
+}
+.Razorpay_Img__uLLj1{
+    min-height: 40px;
+    max-height: 40px;
+    width: auto;
+    max-width: 100%; 
+}
+.Razorpay_hide__AZIPc{
+    display: none;
+}
+.creditDebitCard_cardHeader__YubU6 {
+  color: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+}
+
+.creditDebitCard_cardTitle__tq0N- {
+  display: flex;
+  align-items: center;
+}
+
+.custom-select {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .select-selected {
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+  }
+  
+  .select-selected img {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+  }
+  
+  .select-items {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #ececec;
+    width: 100%;
+    z-index: 1;
+    display: block;
+    max-height: 200px;
+    overflow-y: scroll;
+    border-radius: 4px;
+  }
+  
+  .select-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .select-item img {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+  }
+  
+  .select-item:hover {
+    background-color: #ddd;
+  }
+  
+  .custom-select-arrow{
+    margin-left: auto;
+    font-size:18px;
+    color: #656565;
+  }
+.card{
+    /* box-shadow: 0px 2px 2px 2px #ddd; */
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.BillingAddress_nameDiv__SQO-J {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+  }
+  
+  .BillingAddress_nameDiv__SQO-J .BillingAddress_inputField__oVI6C {
+    width: 90% !important;
+  }
+  
+  .BillingAddress_addressDiv__9dTjK {
+    display: flex;
+    justify-content: space-between;
+    /* margin-top: 18px;  */ /*in new user case*/
+  }
+  
+  .BillingAddress_shippingType__HVAdP input:not(:first-child) {
+    margin-left: 20px;
+  }
+  
+  .BillingAddress_title__IK6cH {
+    color: var(--color-title);
+    font-weight: 500;
+    margin-bottom: -6px;
+  }
+  
+  .BillingAddress_deliveryLabel__El5WX {
+    font-style: italic;
+    color: var(--grey-dark);
+    font-size: 12px;
+    margin-top: 8px;
+    line-height: 14px;
+  }
+  
+  .BillingAddress_LandmarkButton__Nfar3 {
+    color: var(--secondary-color);
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: 12px;
+    font-weight: 500;
+    border-bottom: 1px solid var(--secondary-color);
+    padding: 0;
+    line-height: 14px;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+  .BillingAddress_LandmarkButtonCard__S27w5 {
+    color: #3173E3 !important;
+    color: var(--Primary-shade, #3173E3) !important;
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: 12px;
+    font-weight: 500;
+    border-bottom: 1px solid #3173E3 !important;
+    border-bottom: 1px solid var(--Primary-shade, #3173E3) !important;
+    padding: 0;
+    line-height: 14px;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+  .BillingAddress_wrongPinMsg__qv4AS {
+    color: red;
+    margin-top: 2px;
+  }
+  .BillingAddress_mb70__ReDvH {
+    margin-bottom: 70px;
+  }
+  
+  .BillingAddress_disabled__zR4fG{
+    cursor: not-allowed !important;
+    background-color: #777777 !important;
+    /* opacity: 0.65; */
+  }
+
+
+.BillingAddress_addressTagContainer__OV\+Hq{
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.BillingAddress_addressTag__9OzYh {
+  border: 1px solid #ACACACAC;
+  width: 33%;
+  height: 34px;
+  color: #ACACACAC;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.BillingAddress_addressTag_selected__KRD6X {
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.BillingAddress_addressTag_selected_card__Z4CMX {
+  border: 1px solid #3173E3;
+  border: 1px solid var(--Primary-shade, #3173E3);
+  color: #3173E3;
+  color: var(--Primary-shade, #3173E3);
+  cursor: pointer;
+}
+.BillingAddressNew_nameDiv__uAi1L {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+  }
+  
+  .BillingAddressNew_nameDiv__uAi1L .BillingAddressNew_inputField__7quEv {
+    width: 90% !important;
+  }
+  
+  .BillingAddressNew_addressDiv__Q6lAW {
+    display: flex;
+    justify-content: space-between;
+    /* margin-top: 18px;  */ /*in new user case*/
+  }
+  
+  .BillingAddressNew_shippingType__ulsW4 input:not(:first-child) {
+    margin-left: 20px;
+  }
+  
+  .BillingAddressNew_title__Vyrd- {
+    color: var(--color-title);
+    font-weight: 500;
+    margin-bottom: -6px;
+  }
+  
+  .BillingAddressNew_deliveryLabel__-9ofb {
+    font-style: italic;
+    color: var(--grey-dark);
+    font-size: 12px;
+    margin-top: 8px;
+    line-height: 14px;
+  }
+  
+  .BillingAddressNew_LandmarkButton__Nps5O {
+    color: var(--secondary-color);
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: 12px;
+    font-weight: 500;
+    border-bottom: 1px solid var(--secondary-color);
+    padding: 0;
+    line-height: 14px;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+  .BillingAddressNew_LandmarkButtonCard__oqXvg {
+    color: #3173E3 !important;
+    color: var(--Primary-shade, #3173E3) !important;
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: 12px;
+    font-weight: 500;
+    border-bottom: 1px solid #3173E3 !important;
+    border-bottom: 1px solid var(--Primary-shade, #3173E3) !important;
+    padding: 0;
+    line-height: 14px;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+  .BillingAddressNew_wrongPinMsg__MkMxj {
+    color: red;
+    margin-top: 2px;
+  }
+  .BillingAddressNew_mb70__0dyiA {
+    margin-bottom: 70px;
+  }
+  
+  .BillingAddressNew_disabled__usRvu{
+    cursor: not-allowed !important;
+    background-color: #777777 !important;
+    /* opacity: 0.65; */
+  }
+
+  
+.BillingAddressNew_addressTagContainer__UXDvX{
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.BillingAddressNew_addressTag__OwW9C {
+  border: 1px solid #ACACACAC;
+  width: 33%;
+  height: 34px;
+  color: #ACACACAC;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.BillingAddressNew_addressTag_selected__nG8cj {
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.BillingAddressNew_addressTag_selected_card__BboSk {
+  border: 1px solid #3173E3;
+  border: 1px solid var(--Primary-shade, #3173E3);
+  color: #3173E3;
+  color: var(--Primary-shade, #3173E3);
+  cursor: pointer;
+}
+.customModal_backDrop__P805N {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+  }
+  
+.customModal_closeBackDrop__m94qi {
+  animation: customModal_background-ease-out__w8Nm3 500ms ease-out;
+}
+
+@keyframes customModal_background-ease-out__w8Nm3 {
+    0% {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+    33% {
+      background-color: rgba(0, 0, 0, 0.33);
+    }
+    67% {
+      background-color: rgba(0, 0, 0, 0.15);
+    }
+    100% {
+      background-color: none;
+    }
+  }
+  
+.customModal_customModal__Fj82a {
+    position: fixed;
+    background-color: var(--white);
+    z-index: 1000;
+    width: 100%;
+    max-width: 414px;
+    box-sizing: border-box;
+    left: 0px;
+    margin: 0 auto;
+    right: 0;
+    bottom: 0;
+    border-radius: 22px 22px 0px 0px;
+    animation: customModal_slide-UP__hm1qL 500ms ease-out forwards;
+  }
+
+  .customModal_customModalCard__JAm7Y {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    background-color: var(--white);
+    z-index: 1000;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+    left: 0px;
+    margin: 0 auto;
+    right: 0;
+    bottom: 0;
+    border-radius: 22px 22px 0px 0px;
+    animation: customModal_slide-UP-card__pGpzo 500ms ease-out forwards;
+    transform: translateY(70%);
+    height: auto;
+    max-height: calc(100vh - 30%);
+  }
+
+  @keyframes customModal_slide-UP__hm1qL {
+    from {
+      top: 100%;
+    }
+    to {
+      top: 30%;
+    }
+  }
+  @keyframes customModal_slide-UP-card__pGpzo {
+    from {
+      transform: translateY(70%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  .customModal_closeModal__7l0qf {
+    animation: customModal_slide-down__oQ20R 300ms ease-out forwards;
+  }
+  .customModal_closeModalCard__RDArE {
+    animation: customModal_slide-down-card__7Gd96 500ms ease-out forwards;
+    transform: translateY(0);
+  }
+
+  @keyframes customModal_slide-down__oQ20R {
+    from {
+      top: 30%;
+    }
+    to {
+      top: 100%;
+    }
+  }
+  @keyframes customModal_slide-down-card__7Gd96 {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(70%);
+    }
+  }
+  
+
+  .customModal_CustomHeader__\+\+Q1z {
+    background-color: #ffffff;
+    border-bottom: 1px solid #dcdcdc;
+    padding: 18px 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+  }
+  .customModal_CustomHeaderCard__ebdR2{
+    background-color: #fff;
+    /* text-align: center; */
+    /* padding: 0 0 18px 0; */
+    padding: 16px 16px 16px 16px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .customModal_CustomHeader__\+\+Q1z .customModal_title__R-RDL {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: uppercase;
+  }
+  .customModal_CustomHeaderCard__ebdR2 .customModal_title__R-RDL {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-color);
+    /* padding-top: 10px; */
+  }
+
+  .customModal_body__4l0cn {
+    padding: 24px;
+    height: 75%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .customModal_bodyCard__N0ZT\+ {
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: #fff;
+    padding: 0px 16px 24px 16px;
+    max-height: calc(100vh - 30% );
+  }
+
+  .customModal_closeWrapper__ZRWDi{
+    position: relative;
+    margin-right: 10px;
+  }
+  
+  .customModal_close__gtpik {
+    position: absolute;
+    height: 26px;
+    width: 26px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all .2s;
+  }
+  
+  .customModal_close__gtpik:hover {
+    opacity: 1;
+  }
+  
+  .customModal_close__gtpik:before, .customModal_close__gtpik:after {
+    position: absolute;
+    left: 0;
+    content: ' ';
+    height: 20px;
+    width: 1.5px;
+    background-color: #333;
+  }
+  
+  .customModal_close__gtpik:before {
+    transform: rotate(45deg);
+  }
+  .customModal_close__gtpik:after {
+    transform: rotate(-45deg);
+  }
+.removeCoupon_removeCouponButton__i3Do7{
+    color: #3173E3;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: flex-end;
+    background: none;
+    outline: none;
+    border:none;
+    max-width: 200px;
+    cursor: pointer;
+    margin-right: 24px;
+    z-index: 9999999;
+  }
+  
+  .removeCoupon_removeCouponWrapper__WhreM{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -12px;
+    z-index: 2;
+  }
+  .removeCoupon_removeCouponErrorMessage__WcvWE {
+    color: #E95123; 
+    font-size:12px;
+    margin-bottom: 0; 
+    margin-top: 10px
+  }
+
+

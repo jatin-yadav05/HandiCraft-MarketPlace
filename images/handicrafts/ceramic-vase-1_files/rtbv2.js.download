@@ -1,0 +1,37 @@
+(async() => {
+  let clickId = getCookie("rtb-global");
+  if (!clickId || clickId === '') clickId = "5b45b2df-ddf9-4750-a473-69a3dc72a5ff";
+
+  const expires = (new Date(Date.now() + 30 * 86400 * 1000)).toUTCString();
+  document.cookie = "rtb-global" + '=' + clickId + '; expires=' + expires + 86400 +
+      ';path=/';
+
+  const data = {
+    url: window.location.href,
+    referrer: document.referrer,
+    unique_id: clickId,
+  };
+
+  await fetch("https://rtb-global.com" + "/belter/targeting", {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  function getCookie(cname) {
+    const name = cname + '=';
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) === ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) === 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return '';
+  }
+})();

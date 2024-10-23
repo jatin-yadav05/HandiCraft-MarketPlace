@@ -3,10 +3,6 @@ const slides = document.getElementById('slides');
 const dots = document.querySelectorAll('.dot');
 let currentIndex = 0;
 
-document.getElementById('login-nav').style.display = 'none';
-document.getElementById('signup-nav').style.display = 'none';
-document.getElementById('extra-link').style.display = 'inline';
-
 function showSlide(index) {
   currentIndex = index;
   const offset = -index * 100;

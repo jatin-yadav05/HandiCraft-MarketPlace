@@ -13,23 +13,28 @@ export function initItems() {
     }
 }
 
-export function addItemToCart(itemId, quantity = 1) {
+export function addItemToCart(itemId,category, quantity = 1) {
     const cart = JSON.parse(localStorage.getItem(cartKey));
     const itemIndex = cart.findIndex(item => item.id === itemId);
+    const item = getItem(itemId);
+    if (item && item.category !== category) {
+        console.error(`Item category mismatch: expected ${item.category}, got ${category}`);
+        return;
+    }
 
     if (itemIndex > -1) {
         cart[itemIndex].quantity += quantity;
     } else {
-        cart.push({ id: itemId, quantity });
+        cart.push({ id: itemId, quantity,cartCategory:category });
     }
 
     localStorage.setItem(cartKey, JSON.stringify(cart));
     console.log('Cart after adding item:', cart);
 }
 
-export function removeItemFromCart(itemId) {
+export function removeItemFromCart(itemId,category) {
     let cart = JSON.parse(localStorage.getItem(cartKey));
-    cart = cart.filter(item => item.id !== itemId);
+    cart = cart.filter(item => item.id !== itemId || item.cartCategory !== category);
     localStorage.setItem(cartKey, JSON.stringify(cart));
     console.log('Cart after removing item:', cart);
 }
@@ -95,3 +100,5 @@ initItems();
 
 console.log('Cart:', getCart());
 console.log('All Items:', getAllItems());
+
+

@@ -6,6 +6,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vite App</title>
   <link rel="stylesheet" href="./src/output.css">
+  <style>
+    .transition-transform {
+      transition: transform 0.4s ease, opacity 0.4s ease;
+    }
+
+    .nav-links {
+      position: relative;
+
+    }
+
+    .nav-links::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      border-radius: 50%;
+      background-color: #994200;
+      transition: width 0.3s ease-in-out;
+    }
+
+    .nav-links:hover::after {
+      width: 100%;
+    }
+  </style>
 </head>
 
 <body class="h-full">
@@ -13,36 +39,47 @@
     class="h-36 max-md:h-32 top-bar flex items-center justify-center sticky top-0 bg-[#994200] z-50 transition-all duration-500">
     <nav class="bg-white nav-bar flex flex-wrap justify-between items-center w-[90%] p-5 rounded-full">
       <div class="flex gap-[4vw] items-center ml-[4vw] justify-center">
-        <a href="./"
-          class="hover:underline cursor-pointer max-sm:text-xs max-md:text-sm max-md:font-semibold lg:inline">Home
+        <a href="./products.html?category=home-decors"
+          class="nav-links cursor-pointer max-sm:text-xs max-md:text-sm max-md:font-semibold lg:inline">Home
           Decors</a>
-        <a href="./"
-          class="hover:underline cursor-pointer max-sm:hidden max-md:text-sm max-sm:font-semibold lg:inline">Wall
+        <a href="./products.html?category=wall-mirrors"
+          class="nav-links cursor-pointer max-sm:hidden max-md:text-sm max-sm:font-semibold lg:inline">Wall
           Mirrors</a>
-        <a href="./" class="hover:underline cursor-pointer hidden lg:inline">Table Decor</a>
-        <a href="./" class="hover:underline cursor-pointer inline max-[1420px]:hidden">3D Murals</a>
+        <a href="./products.html?category=table-decor" class="nav-links cursor-pointer hidden lg:inline">Table Decor</a>
+        <a href="./products.html?category=3d-murals" class="nav-links cursor-pointer inline max-[1420px]:hidden">3D
+          Murals</a>
       </div>
-      <div class="logo absolute left-1/2 transform -translate-x-1/2">
+      <a href="./" class="logo absolute z-50 left-1/2 transform -translate-x-1/2">
         <img class="rounded-full shadow-2xl w-24 sm:w-32 md:w-32" src="./images/logo.png" alt="Logo">
-      </div>
-      <div class="flex ml-auto mr-[5vw] max-lg:mr-[3vw] max-[900px]:mr-[1vw] max-[900px]:gap-[2vw] items-center gap-[4vw] justify-center">
-        <a href="./" class="hover:underline cursor-pointer inline max-[1420px]:hidden">Imported Vases</a>
-        <a id="extra-link" href="./" class="hover:underline cursor-pointer inline max-[1420px]:hidden">Kalparvriksha</a>
-        <a id="login-nav" href="./login.html" class="hover:underline cursor-pointer hidden lg:inline">Login</a>
-        <a id="signup-nav" href="./signup.html" class="hover:underline cursor-pointer hidden lg:inline">Sign Up</a>
+      </a>
+      <div
+        class="flex ml-auto mr-[5vw] max-lg:mr-[3vw] max-[900px]:mr-[1vw] max-[900px]:gap-[2vw] items-center gap-[4vw] justify-center">
+        <a href="./products.html?category=imported-vases" id="imported-link"
+          class="nav-links cursor-pointer hidden max-[1420px]:hidden">Imported Vases</a>
+        <a id="extra-link" href="./products.html?category=kalparvriksha"
+          class="nav-links cursor-pointer hidden max-[1420px]:hidden">Kalparvriksha</a>
+        <a id="login-nav" href="./login.html" class="nav-links cursor-pointer hidden ">Login</a>
+        <a id="signup-nav" href="./signup.html" class="nav-links cursor-pointer hidden ">Sign Up</a>
       </div>
       <div class="flex items-center gap-1 sm:gap-2 md:gap-3 lg:gap-4 justify-center">
-        <a class="cursor-pointer p-2 rounded-full hover:bg-[#ffbd8a] transition-all duration-500 relative group" href="./dashboard.html" >
+        <a class="cursor-pointer p-2 rounded-full hover:bg-[#ffbd8a] transition-all duration-500 relative group"
+          href="./dashboard.html">
           <img class="w-5 md:w-6" src="./images/🦆 icon _user_.svg" alt="Sign Up">
-          <span class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-700 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-500">Dashboard</span>
+          <span
+            class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-700 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-500">Dashboard</span>
         </a>
-        <a class="cursor-pointer p-1 rounded-full hover:bg-[#ffbd8a] transition-all duration-500 relative group" href="#" >
+        <a class="cursor-pointer p-1 rounded-full hover:bg-[#ffbd8a] transition-all duration-500 relative group"
+          href="./cart.html">
           <img class="mb-1 w-7 h-6 md:w-8 md:h-7" src="./images/Clip path group.svg" alt="Cart">
-          <span class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-700 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-500">Cart</span>
+          <span
+            class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-700 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-500">Cart</span>
         </a>
-        <a class="cursor-pointer p-2 rounded-full hover:bg-[#ffbd8a] transition-all duration-500 relative group" href="#">
+        <a id="open-search"
+          class="cursor-pointer p-2 rounded-full hover:bg-[#ffbd8a] transition-all duration-500 relative group"
+          href="./products.html?isSearch=active">
           <img class="w-4 sm:w-5 md:w-5" src="./images/🦆 icon _search_.svg" alt="Search">
-          <span class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-700 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-500">Search</span>
+          <span
+            class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-700 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-500">Search</span>
         </a>
       </div>
     </nav>
@@ -181,11 +218,14 @@
           <div class="bg-amber-800 w-[30vw] sm:w-[20vw] md:w-[15vw] lg:w-[10vw] h-0.5"></div>
         </div>
       </div>
-      <button
-        class="mt-4 sm:mt-0 px-3 h-10 sm:h-12 md:h-14 lg:h-16 uppercase rounded-lg py-0 border-2 border-amber-800 border-solid leading-none text-base sm:text-lg md:text-xl lg:text-2xl">
-        see all
-      </button>
+      <a href="./products.html">
+        <button
+          class="mt-4 sm:mt-0 px-3 h-10 sm:h-12 md:h-14 lg:h-16 uppercase rounded-lg py-0 border-2 border-amber-800 border-solid leading-none text-base sm:text-lg md:text-xl lg:text-2xl">
+          see all
+        </button>
+      </a>
     </div>
+
     <div class="grid h-fit overflow-hidden products-grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8"></div>
   </div>
 
@@ -306,10 +346,10 @@
         <div>
           <h3 class="text-xl font-semibold mb-4">Customer Policies</h3>
           <ul class="space-y-2">
-            <li><a href="#" class="hover:underline">Privacy Policy</a></li>
-            <li><a href="#" class="hover:underline">Terms of Service</a></li>
-            <li><a href="#" class="hover:underline">Return Policy</a></li>
-            <li><a href="#" class="hover:underline">Shipping Policy</a></li>
+            <li><a href="#" class="nav-links">Privacy Policy</a></li>
+            <li><a href="#" class="nav-links">Terms of Service</a></li>
+            <li><a href="#" class="nav-links">Return Policy</a></li>
+            <li><a href="#" class="nav-links">Shipping Policy</a></li>
           </ul>
         </div>
         <div>
@@ -374,39 +414,41 @@
 
   </script>
   <script type="module">
-        // Import Firebase services
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
-        import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
-    
-        // Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyCmk9UfbIvxX68GbpK_wbTyxe_Bh9tl6c0",
-            authDomain: "handicraft-marketplace-63df1.firebaseapp.com",
-            projectId: "handicraft-marketplace-63df1",
-            storageBucket: "handicraft-marketplace-63df1.appspot.com",
-            messagingSenderId: "34989980332",
-            appId: "1:34989980332:web:de98a27de1c702dafd3d09",
-            measurementId: "G-2EC4QFTCM5"
-        };
-    
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-    
-        // Check auth state to display appropriate buttons
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                // User is logged in, show logout button and hide login/signup
-                document.getElementById('login-nav').style.display = 'none';
-                document.getElementById('signup-nav').style.display = 'none';
-                document.getElementById('extra-link').style.display = 'inline';
-            } else {
-                // No user is logged in, show login/signup and hide logout
-                document.getElementById('login-nav').style.display = 'inline';
-                document.getElementById('signup-nav').style.display = 'inline';
-                document.getElementById('extra-link').style.display = 'none';
-            }
-        });
+    // Import Firebase services
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
+
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCmk9UfbIvxX68GbpK_wbTyxe_Bh9tl6c0",
+      authDomain: "handicraft-marketplace-63df1.firebaseapp.com",
+      projectId: "handicraft-marketplace-63df1",
+      storageBucket: "handicraft-marketplace-63df1.appspot.com",
+      messagingSenderId: "34989980332",
+      appId: "1:34989980332:web:de98a27de1c702dafd3d09",
+      measurementId: "G-2EC4QFTCM5"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // Check auth state to display appropriate buttons
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is logged in, show logout button and hide login/signup
+        document.getElementById('imported-link').style.display = 'inline';
+        document.getElementById('login-nav').style.display = 'none';
+        document.getElementById('signup-nav').style.display = 'none';
+        document.getElementById('extra-link').style.display = 'inline';
+      } else {
+        // No user is logged in, show login/signup and hide logout
+        document.getElementById('imported-link').style.display = 'inline';
+        document.getElementById('login-nav').style.display = 'inline';
+        document.getElementById('signup-nav').style.display = 'inline';
+        document.getElementById('extra-link').style.display = 'none';
+      }
+    });
   </script>
 </body>
 
