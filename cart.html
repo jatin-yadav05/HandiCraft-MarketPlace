@@ -74,13 +74,13 @@
 
     <!-- Main Content -->
     <main class="container mx-auto my-10 p-5 bg-white rounded-lg shadow-lg">
-        <h2 class="text-4xl font-semibold mb-6 text-center">Your Cart</h2>
+        <h2 class="text-4xl cart-title font-semibold mb-6 text-center">Your Cart</h2>
         <div class="cart-items-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Cart items will be dynamically inserted here -->
         </div>
-        <div class="mt-10 text-right">
+        <div class="mt-10 text-right cart-total-container">
             <span class="text-2xl font-semibold">Total: ₹<span class="cart-total">0.00</span></span>
-            <a href="./checkout.html">
+            <a class="direct-to-checkout">
                 <button class="bg-[#994200] text-white px-6 py-3 rounded-lg ml-4 hover:bg-[#ac5b1c] transition duration-300">Checkout</button>
             </a>
         </div>

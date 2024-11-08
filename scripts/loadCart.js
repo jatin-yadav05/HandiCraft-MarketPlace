@@ -1,11 +1,14 @@
 import { trees, all, importedVases, wallMirrors, homeDecors, tableDecors, threeDMurals } from "./data/products";
 
-import { removeItemFromCart } from "./cart";
+import { removeItemFromCart, updateItemQuantity } from "./cart";
 
 
-let wholeCartPrice = 0;
+
+export let wholeCartPrice = 0;
 
 export function renderCartItems() {
+    wholeCartPrice = 0;
+    
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const cartContainer = document.querySelector('.cart-items-container');
 
@@ -14,11 +17,25 @@ export function renderCartItems() {
 
     // Check if cart is empty
     if (cart.length === 0) {
-        cartContainer.innerHTML = '<p class="text-center text-gray-600">Your cart is empty.</p>';
+        cartContainer.classList.add('flex', 'flex-col', 'items-center', 'justify-center', 'min-h-[60vh]');
+        document.querySelector('.cart-title').style.display = 'none';
+        cartContainer.classList.remove('grid', 'grid-cols-3', 'gap-4');
+        cartContainer.innerHTML = `
+            <div class="text-center mb-10">
+                <img src="./images/empty-cart.svg" alt="Empty Cart" class="w-52 h-52 mx-auto mb-6">
+                <h1 class="text-3xl font-bold text-gray-800 mb-4">Your cart is empty</h1>
+                <p class="text-gray-600 mb-6">Looks like you haven't added anything to your cart yet.</p>
+                <a href="./products.html" class="bg-[#994200] text-white px-6 py-3 rounded-lg hover:bg-[#ac5b1c] transition duration-300">
+                    Start Shopping
+                </a>
+            </div>`;
+        // Set cart total to 0 when cart is empty
+        document.querySelector('.cart-total-container').style.display = 'none';
         return;
     }
 
     // Generate HTML for each cart item
+    if(cart.length > 0){
     cart.forEach(item => {
         let itemData;
         let itemId = parseInt(item.id);
@@ -54,7 +71,7 @@ export function renderCartItems() {
             <div class="flex justify-between items-center mt-auto">
             <div class="flex items-center">
                 <label for="quantity-${itemData.id}" class="mr-2 text-gray-600">Qty:</label>
-                <input type="number" id="quantity-${itemData.id}" name="quantity" min="1" value="${item.quantity}" class="w-16 p-1 border rounded text-center">
+                <input type="number" data-id="${itemData.id}" id="quantity-${itemData.id}" name="quantity" min="1" value="${item.quantity}" class="w-16 p-1 update-quantity-js border rounded text-center">
             </div>
             <span class="text-lg font-bold text-amber-800">₹${itemData.price}</span>
             </div>
@@ -65,6 +82,7 @@ export function renderCartItems() {
         `;
         cartContainer.appendChild(itemElement);
     });
+    }
     document.querySelector('.cart-total').innerHTML = `${wholeCartPrice.toFixed(2)}`;
 }
 
@@ -75,12 +93,25 @@ document.addEventListener('click', e => {
     if (e.target.matches('.remove-from-cart-js')) {
         const itemId = e.target.dataset.id;
         const category = e.target.dataset.category;
-        console.log(e.target.dataset);
         removeItemFromCart(itemId, category);
-        console.log("Before",wholeCartPrice);
-        console.log(e.target.parentElement.querySelector('span').dataset.totalPrice);
-        wholeCartPrice-=e.target.parentElement.querySelector('span').dataset.totalPrice;
-        console.log("After",wholeCartPrice);
         renderCartItems();
     }
+});
+
+function updateQuantity(e) {
+    const itemId = e.target.dataset.id;
+    const quantity = e.target.value;
+    console.log(itemId, quantity);
+    updateItemQuantity(itemId, quantity);
+}
+
+document.addEventListener('change', e => {
+    if (e.target.matches('.update-quantity-js')) {
+        updateQuantity(e);
+        renderCartItems();  
+    }
+});
+
+document.querySelector('.direct-to-checkout').addEventListener('click', () => {
+    window.location.href = `./checkout.html?cartPrice=${wholeCartPrice}`;
 });

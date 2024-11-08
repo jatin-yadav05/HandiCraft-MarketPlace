@@ -76,26 +76,19 @@
             </div>
 
             <!-- Order Summary -->
-            <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="bg-white whole-checkout p-6 rounded-lg shadow-md">
                 <h3 class="text-2xl font-semibold mb-4">Order Summary</h3>
-                <div class="space-y-4">
-                    <div class="flex justify-between">
-                        <span>Product Name</span>
-                        <span>$49.99</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span>Product Name</span>
-                        <span>$49.99</span>
-                    </div>
-                    <div class="flex justify-between font-semibold">
-                        <span>Total</span>
-                        <span>$99.98</span>
-                    </div>
+                <div class="cart-summary space-y-4 mb-4">
                 </div>
-                <button class="w-full mt-6 bg-[#994200] text-white px-4 py-2 rounded hover:bg-[#ac5b1c] transition duration-300">Place Order</button>
+                <div class="flex justify-between text-xl font-bold">
+                    <span>Total</span>
+                    <span id="cart-total">0.00</span>
+                </div>
+                <button class="w-full place-order-js mt-6 bg-[#994200] text-white px-4 py-2 rounded hover:bg-[#ac5b1c] transition duration-300">Place Order</button>
             </div>
         </div>
     </main>
+    <script type="module" src="./scripts/loadCheckout.js"></script>
 
     <footer class="bg-[#73A091] text-white px-5 py-20">
         <div class="container mx-auto px-4">

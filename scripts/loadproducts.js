@@ -9,9 +9,17 @@ function loadProducts(products) {
         const productCard = document.createElement('div');
         productCard.className = 'product-card bg-white relative p-4 rounded-lg shadow-lg';
 
+        const category = product.category === 'products' ? 'all' : 
+                        product.category === 'wallMirrors' ? 'wall-mirrors' :
+                        product.category === 'importedVases' ? 'imported-vases' :
+                        product.category === 'homeDecors' ? 'home-decors' :
+                        product.category === 'tableDecors' ? 'table-decors' :
+                        product.category === 'threeDMurals' ? '3d-murals' :
+                        product.category || 'all';
+        
         productCard.innerHTML = `
         <div class="relative w-full max-h-[55%] overflow-hidden aspect-square object-cover rounded-lg flex items-center justify-center mb-4">
-            <a href="./eachProduct.html?id=${product.id}&category=products" ><img src="${product.image || './images/default-product.jpg'}" alt="${product.name}" class="w-full h-full object-cover rounded-lg">
+            <a href="./eachProduct.html?id=${product.id}&category=${category}" ><img src="${product.image || './images/default-product.jpg'}" alt="${product.name}" class="w-full h-full object-cover rounded-lg">
             </a>
         </div>
         <div style="top:1.5rem;right:1.5rem;" class="absolute">
@@ -23,7 +31,7 @@ function loadProducts(products) {
         <div class="flex justify-between items-center mb-4">
             <p class="text-lg font-bold">₹${product.price}</p>
         </div>
-        <button data-productid="${product.id}" class="add-to-cart w-full py-2 bg-[#994200] hover:bg-[#ac5b1c] text-white font-semibold rounded transition duration-300">
+        <button data-productid="${product.id}" data-category="${category}" class="add-to-cart w-full py-2 bg-[#994200] hover:bg-[#ac5b1c] text-white font-semibold rounded transition duration-300">
             Add to Cart
         </button>
         `;
@@ -33,9 +41,9 @@ function loadProducts(products) {
 
     document.querySelectorAll('.add-to-cart').forEach(button => {
         button.addEventListener('click', event => {
-            console.log(event.target.dataset);
             const itemId = event.target.dataset.productid;
-            addItemToCart(itemId,"all");
+            const category = event.target.dataset.category;
+            addItemToCart(itemId, category);
             const button = event.target;
             button.innerText = 'Added!';
             button.classList.add('bg-green-500');
@@ -46,8 +54,6 @@ function loadProducts(products) {
         });
     });
 }
-
-
 
 document.addEventListener('DOMContentLoaded', () => {
     loadProducts(products);

@@ -10,10 +10,12 @@
         .transition-transform {
             transition: transform 0.4s ease, opacity 0.4s ease;
         }
-        .nav-links{
+
+        .nav-links {
             position: relative;
-            
+
         }
+
         .nav-links::after {
             content: '';
             position: absolute;
@@ -24,53 +26,66 @@
             border-radius: 50%;
             background-color: #994200;
             transition: width 0.3s ease-in-out;
-          }
-          .nav-links:hover::after {
+        }
+
+        .nav-links:hover::after {
             width: 100%;
-          }
+        }
     </style>
 </head>
 
 <body class="font-sans bg-gray-100">
 
     <div
-    class="h-36 max-md:h-32 top-bar flex items-center justify-center sticky top-0 bg-[#994200] z-50 transition-all duration-500">
-    <nav class="bg-white nav-bar flex flex-wrap justify-between items-center w-[90%] p-5 rounded-full">
-      <div class="flex gap-[4vw] items-center ml-[4vw] justify-center">
-        <a href="./products.html?category=home-decors"
-          class="nav-links cursor-pointer max-sm:text-xs max-md:text-sm max-md:font-semibold lg:inline">Home
-          Decors</a>
-        <a href="./products.html?category=wall-mirrors"
-          class="nav-links cursor-pointer max-sm:hidden max-md:text-sm max-sm:font-semibold lg:inline">Wall
-          Mirrors</a>
-        <a href="./products.html?category=table-decor" class="nav-links cursor-pointer hidden lg:inline">Table Decor</a>
-        <a href="./products.html?category=3d-murals" class="nav-links cursor-pointer inline max-[1420px]:hidden">3D Murals</a>
-      </div>
-      <a href="./" class="logo absolute z-50 left-1/2 transform -translate-x-1/2">
-        <img class="rounded-full shadow-2xl w-24 sm:w-32 md:w-32" src="./images/logo.png" alt="Logo">
-      </a>
-      <div class="flex ml-auto mr-[5vw] max-lg:mr-[3vw] max-[900px]:mr-[1vw] max-[900px]:gap-[2vw] items-center gap-[4vw] justify-center">
-        <a href="./products.html?category=imported-vases" id="imported-link" class="nav-links cursor-pointer hidden max-[1420px]:hidden">Imported Vases</a>
-        <a id="extra-link" href="./products.html?category=kalparvriksha" class="nav-links cursor-pointer hidden max-[1420px]:hidden">Kalparvriksha</a>
-        <a id="login-nav" href="./login.html" class="nav-links cursor-pointer hidden ">Login</a>
-        <a id="signup-nav" href="./signup.html" class="nav-links cursor-pointer hidden ">Sign Up</a>
-      </div>
-      <div class="flex items-center gap-1 sm:gap-2 md:gap-3 lg:gap-4 justify-center">
-        <a class="cursor-pointer p-2 rounded-full hover:bg-[#ffbd8a] transition-all duration-500 relative group" href="./dashboard.html" >
-          <img class="w-5 md:w-6" src="./images/🦆 icon _user_.svg" alt="Sign Up">
-          <span class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-700 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-500">Dashboard</span>
-        </a>
-        <a class="cursor-pointer p-1 rounded-full hover:bg-[#ffbd8a] transition-all duration-500 relative group" href="./cart.html" >
-          <img class="mb-1 w-7 h-6 md:w-8 md:h-7" src="./images/Clip path group.svg" alt="Cart">
-          <span class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-700 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-500">Cart</span>
-        </a>
-        <a id="open-search" class="cursor-pointer p-2 rounded-full hover:bg-[#ffbd8a] transition-all duration-500 relative group" href="./products.html?isSearch=active">
-          <img class="w-4 sm:w-5 md:w-5" src="./images/🦆 icon _search_.svg" alt="Search">
-          <span class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-700 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-500">Search</span>
-        </a>
-      </div>
-    </nav>
-  </div>
+        class="h-36 max-md:h-32 top-bar flex items-center justify-center sticky top-0 bg-[#994200] z-50 transition-all duration-500">
+        <nav class="bg-white nav-bar flex flex-wrap justify-between items-center w-[90%] p-5 rounded-full">
+            <div class="flex gap-[4vw] items-center ml-[4vw] justify-center">
+                <a href="./products.html?category=home-decors"
+                    class="nav-links cursor-pointer max-sm:text-xs max-md:text-sm max-md:font-semibold lg:inline">Home
+                    Decors</a>
+                <a href="./products.html?category=wall-mirrors"
+                    class="nav-links cursor-pointer max-sm:hidden max-md:text-sm max-sm:font-semibold lg:inline">Wall
+                    Mirrors</a>
+                <a href="./products.html?category=table-decor" class="nav-links cursor-pointer hidden lg:inline">Table
+                    Decor</a>
+                <a href="./products.html?category=3d-murals"
+                    class="nav-links cursor-pointer inline max-[1420px]:hidden">3D Murals</a>
+            </div>
+            <a href="./" class="logo absolute z-50 left-1/2 transform -translate-x-1/2">
+                <img class="rounded-full shadow-2xl w-24 sm:w-32 md:w-32" src="./images/logo.png" alt="Logo">
+            </a>
+            <div
+                class="flex ml-auto mr-[5vw] max-lg:mr-[3vw] max-[900px]:mr-[1vw] max-[900px]:gap-[2vw] items-center gap-[4vw] justify-center">
+                <a href="./products.html?category=imported-vases" id="imported-link"
+                    class="nav-links cursor-pointer hidden max-[1420px]:hidden">Imported Vases</a>
+                <a id="extra-link" href="./products.html?category=kalparvriksha"
+                    class="nav-links cursor-pointer hidden max-[1420px]:hidden">Kalparvriksha</a>
+                <a id="login-nav" href="./login.html" class="nav-links cursor-pointer hidden ">Login</a>
+                <a id="signup-nav" href="./signup.html" class="nav-links cursor-pointer hidden ">Sign Up</a>
+            </div>
+            <div class="flex items-center gap-1 sm:gap-2 md:gap-3 lg:gap-4 justify-center">
+                <a class="cursor-pointer p-2 rounded-full hover:bg-[#ffbd8a] transition-all duration-500 relative group"
+                    href="./dashboard.html">
+                    <img class="w-5 md:w-6" src="./images/🦆 icon _user_.svg" alt="Sign Up">
+                    <span
+                        class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-700 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-500">Dashboard</span>
+                </a>
+                <a class="cursor-pointer p-1 rounded-full hover:bg-[#ffbd8a] transition-all duration-500 relative group"
+                    href="./cart.html">
+                    <img class="mb-1 w-7 h-6 md:w-8 md:h-7" src="./images/Clip path group.svg" alt="Cart">
+                    <span
+                        class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-700 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-500">Cart</span>
+                </a>
+                <a id="open-search"
+                    class="cursor-pointer p-2 rounded-full hover:bg-[#ffbd8a] transition-all duration-500 relative group"
+                    href="./products.html?isSearch=active">
+                    <img class="w-4 sm:w-5 md:w-5" src="./images/🦆 icon _search_.svg" alt="Search">
+                    <span
+                        class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-700 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-500">Search</span>
+                </a>
+            </div>
+        </nav>
+    </div>
 
 
     <div class="flex">
@@ -160,8 +175,8 @@
                 </div>
                 <button
                     class="edit-button bg-black text-white border-none px-5 py-2 text-center inline-block text-base mt-5 cursor-pointer rounded transition duration-300 hover:bg-gray-800">Edit</button>
-                    <button
-                        class="cancel-button bg-gray-400 text-white border-none px-5 py-2 text-center text-base mt-5 cursor-pointer rounded transition duration-300 hover:bg-gray-700 hidden">Cancel</button>
+                <button
+                    class="cancel-button bg-gray-400 text-white border-none px-5 py-2 text-center text-base mt-5 cursor-pointer rounded transition duration-300 hover:bg-gray-700 hidden">Cancel</button>
                 <button
                     class="save-button bg-black text-white border-none px-5 py-2 text-center text-base mt-5 cursor-pointer rounded transition duration-300 hover:bg-gray-800 hidden">Save</button>
             </div>
@@ -171,7 +186,23 @@
             </div>
             <div id="orders" class="dashboard-section hidden">
                 <h1 class="text-2xl font-bold mb-4 pb-2 border-b">My Orders</h1>
-                <p class="text-gray-600">Your order history will appear here.</p>
+                <div id="orders-container" class="space-y-4">
+                    <!-- Orders will be loaded here -->
+                </div>
+                <div id="orderModal"
+                    class="fixed inset-0 px-4 sm:px-10 py-8 sm:py-14 shadow-2xl backdrop-blur-sm bg-opacity-50 hidden items-center justify-center">
+                    <div class="bg-white rounded-lg p-8 max-w-[80vw] w-full max-h-[70vh] overflow-y-auto relative">
+                        <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                        <div id="orderDetails" class="mt-4">
+                            <!-- Order details will be loaded here -->
+                        </div>
+                    </div>
+                </div>
             </div>
             <div id="address-book" class="dashboard-section hidden">
                 <h1 class="text-2xl font-bold mb-4 pb-2 border-b">Address Book</h1>

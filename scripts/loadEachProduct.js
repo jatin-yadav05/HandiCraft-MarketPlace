@@ -78,8 +78,14 @@ function renderProduct(product) {
                         </div>
                     </div>
                     <div class="flex space-x-4">
-                        <button data-id="${product.id}" data-category="${productCategory}" class="flex-1 add-product-to-cart px-6 py-3 bg-blue-900 text-white rounded-md font-semibold add-to-bag hover:bg-blue-800 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                            ADD TO BAG
+                        <button data-id="${product.id}" data-category="${category}" 
+                                class="flex-1 add-product-to-cart px-6 py-3 bg-blue-900 text-white rounded-md font-semibold add-to-bag 
+                                       hover:bg-blue-800 transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 
+                                       focus:ring-blue-500 focus:ring-opacity-50 flex items-center justify-center gap-2">
+                            <span class="button-text">ADD TO BAG</span>
+                            <svg class="w-0 h-5 hidden transition-all duration-300 success-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
                         </button>
                         <button class="px-6 py-3 bg-white border-2 border-blue-900 text-blue-900 rounded-md font-semibold save hover:bg-blue-50 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                             ♡ SAVE
@@ -116,10 +122,41 @@ function renderProduct(product) {
 
 renderProduct(product);
 
+document.querySelector('.add-product-to-cart').addEventListener('click', event => {
+    const btn = event.currentTarget;
+    const itemId = btn.dataset.id;
+    const category = btn.dataset.category;
 
-document.querySelector('.add-product-to-cart').addEventListener('click', (e) => {
-        const productId = e.target.getAttribute('dataset-id');
-        const productCategory = e.target.getAttribute('dataset-category');
-        console.log(productId,productCategory);
-        addItemToCart(productId,productCategory);
+
+    // Add to cart
+    addItemToCart(itemId, category);
+    
+    // Animate button
+    btn.classList.remove('bg-blue-900', 'hover:bg-blue-800');
+    btn.classList.add('bg-green-500', 'scale-105');
+    
+    // Get the text and icon elements
+    const buttonText = btn.querySelector('.button-text');
+    const successIcon = btn.querySelector('.success-icon');
+    
+    // Animate text and icon
+    buttonText.textContent = 'ADDED!';
+    successIcon.classList.remove('hidden');
+    successIcon.classList.add('block');
+    successIcon.classList.remove('w-0');
+    successIcon.classList.add('w-5');
+    
+    // Disable the button temporarily
+    btn.disabled = true;
+
+    // Reset button after animation
+    setTimeout(() => {
+        btn.classList.remove('bg-green-500', 'scale-105');
+        btn.classList.add('bg-blue-900', 'hover:bg-blue-800');
+        buttonText.textContent = 'ADD TO BAG';
+        successIcon.classList.remove('w-5');
+        successIcon.classList.add('w-0');
+        successIcon.classList.add('hidden');
+        btn.disabled = false;
+    }, 1500);
 });

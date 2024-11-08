@@ -17,11 +17,11 @@ export function addItemToCart(itemId,category, quantity = 1) {
     const cart = JSON.parse(localStorage.getItem(cartKey));
     const itemIndex = cart.findIndex(item => item.id === itemId);
     const item = getItem(itemId);
+    console.log(itemIndex,category);
     if (item && item.category !== category) {
         console.error(`Item category mismatch: expected ${item.category}, got ${category}`);
         return;
     }
-
     if (itemIndex > -1) {
         cart[itemIndex].quantity += quantity;
     } else {
@@ -29,14 +29,12 @@ export function addItemToCart(itemId,category, quantity = 1) {
     }
 
     localStorage.setItem(cartKey, JSON.stringify(cart));
-    console.log('Cart after adding item:', cart);
 }
 
 export function removeItemFromCart(itemId,category) {
     let cart = JSON.parse(localStorage.getItem(cartKey));
     cart = cart.filter(item => item.id !== itemId || item.cartCategory !== category);
     localStorage.setItem(cartKey, JSON.stringify(cart));
-    console.log('Cart after removing item:', cart);
 }
 
 export function updateItemQuantity(itemId, quantity) {
@@ -46,13 +44,11 @@ export function updateItemQuantity(itemId, quantity) {
     if (itemIndex > -1) {
         cart[itemIndex].quantity = quantity;
         localStorage.setItem(cartKey, JSON.stringify(cart));
-        console.log('Cart after updating item quantity:', cart);
     }
 }
 
 export function clearCart() {
     localStorage.setItem(cartKey, JSON.stringify([]));
-    console.log('Cart after clearing:', []);
 }
 
 export function getCart() {
